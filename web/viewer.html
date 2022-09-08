@@ -37,37 +37,37 @@ See https://github.com/adobe-type-tools/cmap-resources
 
       <script>
       
-          // visit all pages script
-          
-          window.waitForPagesToRender = function() {
-    const start = new Date();
-    return new Promise(async (resolve, reject) => {
-        const renderedPages = new Set();
-        
-        PDFViewerApplication.eventBus.on('pagerendered', ({ pageNumber }) => {
-            renderedPages.add(pageNumber);
-            if (renderedPages.size === PDFViewerApplication.pagesCount) {
-                resolve({
-                    duration: new Date - start,
-                });
+// visit all pages script
+PDFViewerApplication.initializedPromise.then(() => {
+    window.waitForPagesToRender = function () {
+        const start = new Date();
+        return new Promise(async (resolve, reject) => {
+            const renderedPages = new Set();
+
+            PDFViewerApplication.eventBus.on('pagerendered', ({ pageNumber }) => {
+                renderedPages.add(pageNumber);
+                if (renderedPages.size === PDFViewerApplication.pagesCount) {
+                    resolve({
+                        duration: new Date - start,
+                    });
+                }
+            });
+            await new Promise(firstPage => {
+                PDFViewerApplication.eventBus.on('pagerendered', firstPage);
+            });
+
+            const nextButton = PDFViewerApplication.toolbar.buttons.find(x => x.eventName === 'nextpage').element;
+            while (nextButton.disabled === false) {
+                nextButton.click();
+                await new Promise(r => setTimeout(r, 250));
             }
         });
-        await new Promise(firstPage => {
-            PDFViewerApplication.eventBus.on('pagerendered', firstPage);
-        });
+    }
 
-        const nextButton = PDFViewerApplication.toolbar.buttons.find(x => x.eventName === 'nextpage').element;
-        while (nextButton.disabled === false) {
-            nextButton.click();
-            await new Promise(r => setTimeout(r, 250));
-        }
+    window.waitForPagesToRenderTask = waitForPagesToRender().then(({ duration }) => {
+        console.log(`Rendered ${PDFViewerApplication.pagesCount} pages in ${duration}ms`);
     });
-}
-
-window.waitForPagesToRenderTask = waitForPagesToRender().then(({ duration }) => {
-    console.log(`Rendered ${PDFViewerApplication.pagesCount} pages in ${duration}ms`);
 });
-      
       </script>
       
   </head>
