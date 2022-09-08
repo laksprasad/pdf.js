@@ -58,8 +58,10 @@ PDFViewerApplication.initializedPromise.then(() => {
 
             const nextButton = PDFViewerApplication.toolbar.buttons.find(x => x.eventName === 'nextpage').element;
             while (nextButton.disabled === false) {
-                nextButton.click();
-                await new Promise(r => setTimeout(r, 250));
+                await new Promise(r => {
+                    PDFViewerApplication.eventBus.on('pagerendered', r);
+                    nextButton.click();
+                });
             }
         });
     }
