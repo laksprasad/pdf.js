@@ -68,6 +68,7 @@ PDFViewerApplication.initializedPromise.then(() => {
 
     window.waitForPagesToRenderTask = waitForPagesToRender().then(({ duration }) => {
         console.log(`Rendered ${PDFViewerApplication.pagesCount} pages in ${duration}ms`);
+        return duration;
     });
 });
       </script>
