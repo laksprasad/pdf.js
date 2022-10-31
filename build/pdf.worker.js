@@ -30022,11 +30022,11 @@ function normalizeFontName(name) {
 /***/ ((__unused_webpack_module, __webpack_exports__, __w_pdfjs_require__) => {
 
 __w_pdfjs_require__.r(__webpack_exports__);
-/* harmony export */ __w_pdfjs_require__.d(__webpack_exports__, {
-/* harmony export */   "getDingbatsGlyphsUnicode": () => (/* binding */ getDingbatsGlyphsUnicode),
-/* harmony export */   "getGlyphsUnicode": () => (/* binding */ getGlyphsUnicode)
-/* harmony export */ });
-/* harmony import */ var _core_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __w_pdfjs_require__(6);
+/* harmony ex*//*port */ __w_pdfjs_require__.d(__webpack_exports__, {
+/* harmony ex*//*port */   "getDingbatsGlyphsUnicode": () => (/* binding */ getDingbatsGlyphsUnicode),
+/* harmony ex*//*port */   "getGlyphsUnicode": () => (/* binding */ getGlyphsUnicode)
+/* harmony ex*//*port */ });
+/* harmony im*//*port */ var _core_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __w_pdfjs_require__(6);
 
 const getGlyphsUnicode = (0,_core_utils_js__WEBPACK_IMPORTED_MODULE_0__.getArrayLookupTableFactory)(function () {
  return [
@@ -39093,16 +39093,16 @@ const getDingbatsGlyphsUnicode = (0,_core_utils_js__WEBPACK_IMPORTED_MODULE_0__.
 /***/ ((__unused_webpack_module, __webpack_exports__, __w_pdfjs_require__) => {
 
 __w_pdfjs_require__.r(__webpack_exports__);
-/* harmony export */ __w_pdfjs_require__.d(__webpack_exports__, {
-/* harmony export */   "clearUnicodeCaches": () => (/* binding */ clearUnicodeCaches),
-/* harmony export */   "getCharUnicodeCategory": () => (/* binding */ getCharUnicodeCategory),
-/* harmony export */   "getNormalizedUnicodes": () => (/* binding */ getNormalizedUnicodes),
-/* harmony export */   "getUnicodeForGlyph": () => (/* binding */ getUnicodeForGlyph),
-/* harmony export */   "getUnicodeRangeFor": () => (/* binding */ getUnicodeRangeFor),
-/* harmony export */   "mapSpecialUnicodeValues": () => (/* binding */ mapSpecialUnicodeValues),
-/* harmony export */   "reverseIfRtl": () => (/* binding */ reverseIfRtl)
-/* harmony export */ });
-/* harmony import */ var _core_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __w_pdfjs_require__(6);
+/* harmony ex*//*port */ __w_pdfjs_require__.d(__webpack_exports__, {
+/* harmony ex*//*port */   "clearUnicodeCaches": () => (/* binding */ clearUnicodeCaches),
+/* harmony ex*//*port */   "getCharUnicodeCategory": () => (/* binding */ getCharUnicodeCategory),
+/* harmony ex*//*port */   "getNormalizedUnicodes": () => (/* binding */ getNormalizedUnicodes),
+/* harmony ex*//*port */   "getUnicodeForGlyph": () => (/* binding */ getUnicodeForGlyph),
+/* harmony ex*//*port */   "getUnicodeRangeFor": () => (/* binding */ getUnicodeRangeFor),
+/* harmony ex*//*port */   "mapSpecialUnicodeValues": () => (/* binding */ mapSpecialUnicodeValues),
+/* harmony ex*//*port */   "reverseIfRtl": () => (/* binding */ reverseIfRtl)
+/* harmony ex*//*port */ });
+/* harmony im*//*port */ var _core_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __w_pdfjs_require__(6);
 
 const getSpecialPUASymbols = (0,_core_utils_js__WEBPACK_IMPORTED_MODULE_0__.getLookupTableFactory)(function (t) {
  t[63721] = 0x00a9;
@@ -64698,7 +64698,7 @@ class Execute extends _xfa_object.XFAObject {
   constructor(attributes) {
     super(TEMPLATE_NS_ID, "execute");
     this.connection = attributes.connection || "";
-    this.executeType = (0, _utils.getStringOption)(attributes.executeType, ["import", "remerge"]);
+    this.executeType = (0, _utils.getStringOption)(attributes.executeType, ["imp" + "ort", "remerge"]);
     this.id = attributes.id || "";
     this.runAt = (0, _utils.getStringOption)(attributes.runAt, ["client", "both", "server"]);
     this.use = attributes.use || "";
