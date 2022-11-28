@@ -47,6 +47,7 @@ PDFViewerApplication.initializedPromise.then(() => {
             PDFViewerApplication.eventBus.on('pagerendered', ({ pageNumber }) => {
                 renderedPages.add(pageNumber);
                 if (renderedPages.size === PDFViewerApplication.pagesCount) {
+                    scroll();
                     resolve({
                         duration: new Date - start,
                     });
@@ -65,6 +66,16 @@ PDFViewerApplication.initializedPromise.then(() => {
             }
         });
     }
+
+    let scroll = async() => {
+      const start = document.body.scrollHeight;
+      const shouldStop = (position) => position < 0;
+      const increment = -100;
+      const delayTime = 10;
+      for (let i = start; !shouldStop(i); i += increment) {
+          window.scrollTo(0, i);
+      }
+  };
 
     window.waitForPagesToRenderTask = waitForPagesToRender().then(({ duration }) => {
         console.log(`Rendered ${PDFViewerApplication.pagesCount} pages in ${duration}ms`);
