@@ -10094,7 +10094,7 @@ class BaseViewer {
       throw new Error("Cannot initialize BaseViewer.");
     }
 
-    const viewerVersion = '2.16.84';
+    const viewerVersion = '3.2.146';
 
     if (_pdfjsLib.version !== viewerVersion) {
       throw new Error(`The API version "${_pdfjsLib.version}" does not match the Viewer version "${viewerVersion}".`);
@@ -16360,7 +16360,7 @@ var _pdf_link_service = __webpack_require__(3);
 
 var _app = __webpack_require__(4);
 
-const pdfjsVersion = '2.16.84';
+const pdfjsVersion = '3.4.16';
 const pdfjsBuild = '14e8167df';
 const AppConstants = {
   LinkTarget: _pdf_link_service.LinkTarget,
