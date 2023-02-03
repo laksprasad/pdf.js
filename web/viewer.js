@@ -10096,9 +10096,9 @@ class BaseViewer {
 
     const viewerVersion = '3.4.16';
 
-    if (_pdfjsLib.version !== viewerVersion) {
+   /* if (_pdfjsLib.version !== viewerVersion) {
       throw new Error(`The API version "${_pdfjsLib.version}" does not match the Viewer version "${viewerVersion}".`);
-    }
+    } */
 
     this.container = options.container;
     this.viewer = options.viewer || options.container.firstElementChild;
