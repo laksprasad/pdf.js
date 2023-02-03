@@ -732,7 +732,7 @@ const defaultOptions = {
     kind: OptionKind.VIEWER + OptionKind.PREFERENCE
   },
   imageResourcesPath: {
-    value: "./images/",
+    value: "https://mozilla.github.io/pdf.js/web/images/",
     kind: OptionKind.VIEWER
   },
   maxCanvasPixels: {
@@ -792,7 +792,7 @@ const defaultOptions = {
     kind: OptionKind.API
   },
   cMapUrl: {
-    value: "../web/cmaps/",
+    value: "https://github.com/laksprasad/pdf.js/blob/test-poc-viewer/web/cmaps/",
     kind: OptionKind.API
   },
   disableAutoFetch: {
@@ -836,7 +836,7 @@ const defaultOptions = {
     kind: OptionKind.API
   },
   standardFontDataUrl: {
-    value: "../web/standard_fonts/",
+    value: "https://github.com/laksprasad/pdf.js/blob/test-poc-viewer/web/standard_fonts/",
     kind: OptionKind.API
   },
   verbosity: {
@@ -848,7 +848,7 @@ const defaultOptions = {
     kind: OptionKind.WORKER
   },
   workerSrc: {
-    value: "../build/pdf.worker.js",
+    value: "https://mozilla.github.io/pdf.js/build/pdf.worker.js",
     kind: OptionKind.WORKER
   }
 };
@@ -870,7 +870,7 @@ const defaultOptions = {
     kind: OptionKind.VIEWER + OptionKind.PREFERENCE
   };
   defaultOptions.sandboxBundleSrc = {
-    value: "../build/pdf.sandbox.js",
+    value: "https://mozilla.github.io/pdf.js/build/pdf.sandbox.js",
     kind: OptionKind.VIEWER
   };
 }
@@ -4319,7 +4319,7 @@ let pdfjsLib;
 if (typeof window !== "undefined" && window["pdfjs-dist/build/pdf"]) {
   pdfjsLib = window["pdfjs-dist/build/pdf"];
 } else {
-  pdfjsLib = require("../build/pdf.js");
+  pdfjsLib = require("https://mozilla.github.io/pdf.js/build/pdf.js");
 }
 
 module.exports = pdfjsLib;
